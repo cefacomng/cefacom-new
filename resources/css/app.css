@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.tsx';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Brand. Navy is structural, teal is interactive, orange is for attention and warnings only. */
+    --color-navy: #01406d;
+    --color-navy-dark: #012a47;
+    --color-teal: #01b4ba;
+    --color-orange: #ff7a0f;
+    --color-mist: #f5fefe;
+
+    /* Derived accessible shades (white text on teal-strong is about 5:1; brand teal alone is about 2.5:1). */
+    --color-teal-strong: #007c82;
+    --color-teal-strong-hover: #00676c;
+    --color-orange-tint: #fff4ea;
+    --color-danger: #b42318;
+    --color-danger-hover: #912018;
+    --color-danger-tint: #fef3f2;
+    --color-success: #067647;
+    --color-success-tint: #ecfdf3;
+}
+
+@layer base {
+    html {
+        color-scheme: light;
+    }
+    body {
+        @apply bg-slate-50 text-slate-800;
+    }
+    :focus-visible {
+        outline: 2px solid var(--color-teal);
+        outline-offset: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
